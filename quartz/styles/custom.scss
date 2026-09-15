@@ -1,3 +1,145 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// 크롬 브라우저에서 문서의 오른쪽 여백이 사라지는 문제가 있음
+// 문서의 너비가 100%를 넘어가서 발생하문 문제이므로
+// 아래와 같이 html, body의 너비를 100% 제한하면 해결됨.
+:root {
+  --primary: #004b73;
+  --primary-content: #ffffff;
+  --secondary-content: #ffffff;
+  --accent: #11083a;
+  --info: #9ed6ed;
+  --success: #b6e2a2;
+  --neutral: #555;
+  --neutral-content: #555;
+}
+
+html,
+body {
+  max-width: 100% !important; /* 화면 너비가 100%를 절대 넘지 못하도록 고정 */
+}
+
+// Replace the site title with the logo file
+.page-title a {
+  // dimension of your logo
+  display: inline-block;
+  width: 136px;
+  height: 20px;
+
+  // absolute path in your obsidian vault
+  background-image: url('assets/logo.svg'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  // hide the text 
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// 화면 크기 800px 이하일 때 최상단 네비 바를 반투명 블러 스타일로 교체
+@media (max-width: 800px) {
+  .page > #quartz-body .sidebar.left:has(.explorer) {
+    background-color: color-mix(in srgb, var(--light) 50%, transparent);
+    margin: 0 -1rem;
+    padding: 1rem 1rem;
+    backdrop-filter: blur(30px);
+  }
+}
+
+// ---
+// Explorer plugin mod
+// adjustment overview
+// ---
+// change the misc. colors in explorer area
+// make explorer narrower,
+// to add a padded background under the title of current page.
+// ---
+
+// First, fix the bug
+// the explorer area is bigger than the current screen size
+// when the screen width is smaller than 800px
+@media (max-width: 800px) {
+  .explorer .explorer-content {
+    width: 100%; // the original value is 100vw so the element width exceeds the current screen size.
+    max-width: 100%;
+    padding-inline: 1rem;
+  }
+}
+
+// add extra room to the plugin area
+// enable the padded background color
+.explorer-content li {
+  padding-left: 0.5rem;
+}
+
+// add a padded background under the title of current page.
+.explorer-content ul li:has(> a.active) {
+  background-color: color-mix(in srgb, var(--lightgray) 100%, transparent);
+  /* 기존 background-color 대신 아래 속성을 적용합니다 */
+  //   border-right: 1px solid color-mix(in srgb, var(--gray) 75%, transparent);
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  //   width: fit-content;
+}
+
+// following the background color of the current page,
+// change the color of the title of current page
+.explorer-content ul li > a.active {
+  opacity: 1;
+  color: color-mix(in srgb, var(--darkgray) 65%, transparent);
+}
+
+// extra color adjustment for explorer plugin
+// page title
+.explorer-content ul li > a {
+  color: var(--neutral);
+}
+// folder title & folder color, 
+.folder-container div > a,
+.folder-icon {
+  color: var(--tertiary);
+}
+
+// 그래프 확대한 캔버스의 배경의 블러값을 더 높인다. 기본은 5px이다.
+.graph > .global-graph-outer,
+.search > .search-container .active {
+  background-color: color-mix(in srgb, var(--lightgray) 50%, transparent);
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px);
+}
+
+// 그래프 클릭 시 전체 화면을 채우는 그래프의 속성을 조정한다.
+.graph > .global-graph-outer > .global-graph-container,
+.search > .search-container {
+  /* 1. 배경색을 기존 --light 변수 기반으로 가져가되, 뒤에 80(HEX로 50% 투명도)을 붙여 반투명화합니다. */
+  background-color: color-mix(in srgb, var(--light) 50%, transparent);
+
+  /* 2. 뒷배경을 흐리게 처리하는 블러 효과를 적용합니다. (원하는 만큼 픽셀 조절 가능) */
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px); /* 사파리 브라우저 호환성 대응 */
+  border-radius: 30px;
+}
+
+// 검색 메뉴 열렸을 때 해당 키워드의 배경색을 --success 로 바꿈.
+// .search > .search-container > .search-space > .search-layout .highlight {
+//   background: color-mix(in srgb, var(--success) 100%, #fff0);
+// }
+
+/// footer adjustment
+@media (max-width: 800px) {
+  #quartz-body > footer {
+    margin-top: 2rem;
+  }
+}
+#quartz-body > footer > p {
+  display: none;
+}
+
+
+h1 {
+  color: var(--accent);
+}

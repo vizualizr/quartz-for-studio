@@ -1,19 +1,22 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: studio
   pageTitleSuffix: ""
   enableSPA: false
   enablePopovers: true
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: quartz.jzhao.xyz
+  baseUrl: studio.o-m.kr
   ignorePatterns:
-    - private
+    - backoffice
+    - backoffice/**
     - templates
+    - images
+    - literatures/**/*.md
     - .obsidian
+    - private
   theme:
-    name: basic
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
@@ -22,25 +25,25 @@ configuration:
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#edece8"         # base-100 (메인 배경)
+        lightgray: "#dfded7"     # base-200 (보조 배경, 테두리, 구분선)
+        gray: "#c2c5b9"          # base-300 (비활성화 텍스트, 호버 상태 구분선)
+        darkgray: "#000002"      # base-content (일반 본문 텍스트)
+        dark: "#000002"          # base-content (강조 및 헤더 텍스트)
+        secondary: "#004b73"     # primary (링크, 핵심 인터페이스 액센트, 태그 텍스트)
+        tertiary: "#434f63"      # secondary (링크 호버, 액센트 호버 상태)
+        highlight: "rgba(0, 75, 115, 0.08)"    # primary 기반 8% 투명도 (태그 배경, 활성화 내비 배경)
+        textHighlight: "rgba(158, 214, 237, 0.5)" # info 기반 50% 투명도 (마크다운 텍스트 하이라이트 배경)
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#120e0b"
+        lightgray: "#1c1714"
+        gray: "#433a35"
+        darkgray: "#edece8"
+        dark: "#dfded7"
+        secondary: "#52667a"
+        tertiary: "#5a6e63"
+        highlight: rgba(82, 102, 122, 0.2)
+        textHighlight: "#6b5800aa"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -48,7 +51,6 @@ plugins:
       defaultDateType: modified
       priority:
         - frontmatter
-        - git
         - filesystem
     order: 10
   - source: "@quartz-community/syntax-highlighting"
@@ -57,12 +59,22 @@ plugins:
       theme:
         light: github-light
         dark: github-dark
-      keepBackground: true
+      keepBackground: false
     order: 20
   - source: "@quartz-community/obsidian-flavored-markdown"
     enabled: true
     options:
+      comments: true
+      highlight: true
+      wikilinks: true
+      callouts: true
+      mermaid: true
+      parseTags: true
+      parseArrows: true
+      parseBlockReferences: true
       enableInHtmlEmbed: false
+      enableYouTubeEmbed: true
+      enableVideoEmbed: true
       enableCheckbox: true
     order: 30
   - source: "@quartz-community/github-flavored-markdown"
@@ -77,7 +89,7 @@ plugins:
   - source: "@quartz-community/crawl-links"
     enabled: true
     options:
-      markdownLinkResolution: shortest
+      markdownLinkResolution: absolute
     order: 60
   - source: "@quartz-community/description"
     enabled: true
@@ -91,7 +103,7 @@ plugins:
     enabled: false
     order: 85
   - source: "@quartz-community/hard-line-breaks"
-    enabled: false
+    enabled: true
     order: 90
   - source: "@quartz-community/ox-hugo"
     enabled: false
@@ -104,12 +116,29 @@ plugins:
   - source: "@quartz-themes/core"
     enabled: false
     options:
-      theme: tokyo-night
+      theme: default
       mode: both
   - source: "@quartz-community/remove-draft"
     enabled: true
   - source: "@quartz-community/explicit-publish"
     enabled: false
+  - source: "@quartz-community/unlisted-pages"
+    enabled: true
+    options: {}
+    order: 45
+  - source: "@quartz-community/encrypted-pages"
+    enabled: true
+    options:
+      iterations: 600000
+      passwordField: password
+      unlistWhenEncrypted: false
+      outputPath: static/encryptedContentIndex.json
+  - source: "@quartz-community/stacked-pages"
+    enabled: false
+    layout:
+      position: afterBody
+      priority: 50
+      display: all
   - source: "@quartz-community/alias-redirects"
     enabled: true
   - source: "@quartz-community/content-index"
@@ -133,6 +162,25 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      title: notes
+      folderDefaultState: collapsed
+      folderClickBehavior: link
+      useSavedState: true
+      mapFn: |
+        (node) => {
+          # if (node.isFolder) {
+          #   node.displayName = "📁 " + node.displayName;
+          # } else {
+          #   node.displayName = "📄 " + node.displayName;
+          # }
+          # return node;
+        }
+      filterFn: |
+        (node) => {
+          const omit = new Set(["assets"])
+          return !omit.has(node.displayName.toLowerCase())
+        }
     layout:
       position: left
       priority: 50
@@ -204,8 +252,7 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        © o-m.kr: https://o-m.kr
     layout:
       position: footer
       priority: 50
@@ -224,7 +271,7 @@ plugins:
     options: {}
     order: 50
   - source: "@quartz-community/note-properties"
-    enabled: false
+    enabled: true
     options:
       includeAll: false
       includedProperties:
@@ -240,24 +287,13 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
-  - source: "@quartz-community/unlisted-pages"
-    enabled: true
-    options: {}
-    order: 45
-  - source: "@quartz-community/encrypted-pages"
-    enabled: true
-    options:
-      iterations: 600000
-      passwordField: password
-      unlistWhenEncrypted: false
-      outputPath: static/encryptedContentIndex.json
-    order: 900
-  - source: "@quartz-community/stacked-pages"
+  - source: "@quartz-community/obsidian-plugin-excalidraw"
     enabled: false
-    layout:
-      position: afterBody
-      priority: 50
-      display: all
+    options:
+      enableInteraction: true
+      darkMode: auto
+      exportPadding: 20
+    order: 50
 layout:
   groups:
     toolbar:
