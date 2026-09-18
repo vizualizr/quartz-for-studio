@@ -17,33 +17,33 @@ configuration:
     - .obsidian
     - private
   theme:
-    fontOrigin: googleFonts
-    cdnCaching: true
-    typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+    fontOrigin: selfHosted
+    # cdnCaching: true
+    typography: # order of priority: h1 option → header option → theme --h1-font → theme font → Obsidian default
+      header: Pretendard GOV Variable
+      body: Pretendard GOV Variable
+      code: Jetendard
     colors:
       lightMode:
-        light: "#edece8"         # base-100 (메인 배경)
-        lightgray: "#dfded7"     # base-200 (보조 배경, 테두리, 구분선)
-        gray: "#c2c5b9"          # base-300 (비활성화 텍스트, 호버 상태 구분선)
-        darkgray: "#000002"      # base-content (일반 본문 텍스트)
-        dark: "#000002"          # base-content (강조 및 헤더 텍스트)
-        secondary: "#004b73"     # primary (링크, 핵심 인터페이스 액센트, 태그 텍스트)
-        tertiary: "#434f63"      # secondary (링크 호버, 액센트 호버 상태)
-        highlight: "rgba(0, 75, 115, 0.08)"    # primary 기반 8% 투명도 (태그 배경, 활성화 내비 배경)
+        gray: "rgba(0, 0, 2, 0.5)" # base-content/50 (비활성화 텍스트, 호버 상태 구분선)
+        light: "#dfded7" # base-200 (메인 배경)
+        lightgray: "#c2c5b9" # base-300 (보조 배경, 테두리, 구분선)
+        darkgray: "#000002" # base-content (일반 본문 텍스트)
+        dark: "#11083a" # accent (강조 및 헤더 텍스트)
+        secondary: "#004b73" # primary (링크, 핵심 인터페이스 액센트, 태그 텍스트)
+        tertiary: "#555555" # neutral (링크 호버, 액센트 호버 상태)
+        highlight: "rgba(0, 75, 115, 0.08)" # primary 기반 8% 투명도 (태그 배경, 활성화 내비 배경)
         textHighlight: "rgba(158, 214, 237, 0.5)" # info 기반 50% 투명도 (마크다운 텍스트 하이라이트 배경)
       darkMode:
-        light: "#120e0b"
-        lightgray: "#1c1714"
-        gray: "#433a35"
-        darkgray: "#edece8"
-        dark: "#dfded7"
-        secondary: "#52667a"
-        tertiary: "#5a6e63"
-        highlight: rgba(82, 102, 122, 0.2)
-        textHighlight: "#6b5800aa"
+        gray: "rgba(218, 217, 211, 0.5)" # base-100 (메인 배경)
+        light: "#212320" # base-200 (보조 배경, 테두리, 구분선)
+        lightgray: "#2d2f2b" # base-300 (비활성화 텍스트, 호버 상태 구분선)
+        darkgray: "rgba(218, 217, 211, 1)" # base-content (일반 본문 텍스트)
+        dark: "#dbd9d0" # --accent-content (강조 및 헤더 텍스트)
+        secondary: "#c9c7c2" # primary (링크, 핵심 인터페이스 액센트, 태그 텍스트)
+        tertiary: "#5c5e6b" # secondary (링크 호버, 액센트 호버 상태)
+        highlight: "rgba(201, 199, 194, 0.08)" # primary 기반 15% 투명도 (태그 배경, 활성화 내비 배경)
+        textHighlight: "rgba(56, 78, 89, 0.5)" # info 기반 50% 투명도 (마크다운 텍스트 하이라이트 배경)
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -113,6 +113,8 @@ plugins:
     order: 92
   - source: "@quartz-community/quartz-fonts"
     enabled: true
+    options:
+      fontOrigin: selfHosted
   - source: "@quartz-themes/core"
     enabled: false
     options:
@@ -258,6 +260,9 @@ plugins:
       priority: 50
   - source: "@quartz-community/recent-notes"
     enabled: false
+    options:
+      limit: 5
+      # linkToMore: true
   - source: "@quartz-community/spacer"
     enabled: true
     options: {}

@@ -1,46 +1,142 @@
 @use "./variables.scss" as *;
+@use "./custom-fonts.scss";
 
+// @use statement must be the first line than any other import.
 // put your custom CSS here!
 
-// 크롬 브라우저에서 문서의 오른쪽 여백이 사라지는 문제가 있음
-// 문서의 너비가 100%를 넘어가서 발생하문 문제이므로
-// 아래와 같이 html, body의 너비를 100% 제한하면 해결됨.
+// -------------------------------- //
+// ROOT Settings
+// -------------------------------- //
+// color remapping based on DaisyUI scheme
 :root {
-  --primary: #004b73;
+  --base-100: #edece8;
+  // --primary: #004b73; use secondary
   --primary-content: #ffffff;
+  // --secondary: #434f63;
   --secondary-content: #ffffff;
-  --accent: #11083a;
+  // --accent: #11083a; use --dark
+  --accent-content: #ffffff;
+  --neutral: var(--tertiary);
+  --neutral-content: #ffffff;
   --info: #9ed6ed;
+  --info-content: #002336;
   --success: #b6e2a2;
-  --neutral: #555;
-  --neutral-content: #555;
+  --success-content: #153308;
+  --warning: #eab308;
+  --warning-content: #2e1f00;
+  --error: #8b0000;
+  --error-content: #ffffff;
+
+  //
+  --border-radius: 5px; /* 전체 기본값 */
+  --border-radius-form: 20px; /* 폼 전용 — 변수 직접 정의 */
+
+  // FONTS
+  --bodyFont: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --headerFont: var(--bodyFont);
+  --titleFont: var(--bodyFont);
+  --codeFont: "Jetendard", "D2Coding", monospace;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--titleFont);
+  }
 }
 
+// fix: without this code,
+// The width will be exceed 100%
 html,
 body {
   max-width: 100% !important; /* 화면 너비가 100%를 절대 넘지 못하도록 고정 */
 }
 
-// Replace the site title with the logo file
+// ------------------------
+// COLORS for dark theme
+//
+body.theme-dark {
+  --base-100: #181a18;
+  // --primary: #c9c7c2; use secondary
+  --primary-content: #373634;
+  // --secondary: #5c5e6b;
+  --secondary-content: #edece8;
+  // --accent: #2c2538; // use --dark
+  --accent: #2c2538;
+  --accent-content: var(--dark);
+  --neutral: #4a4944;
+  --neutral-content: #edece8;
+  --info: #384e59;
+  --info-content: #9ed6ed;
+  --success: #3a5045;
+  --success-content: #dbcc9b;
+  --warning: #885c00;
+  --warning-content: #fff554;
+  --error: #ff0000;
+  --error-content: #ffe1b3;
+}
+
+// BORDER-RADIUS (site-wide)
+// -------------------------------- //
+button.search-button {
+  border-radius: 1rem;
+}
+
+// border-radius to the search input.
+.search > .search-container > .search-space > :not(.ghost-text):not(.tag-suggestions) {
+  border-radius: 2rem;
+}
+
+// border-radius to the search result window.
+.search > .search-container > .search-space > .search-layout.display-results {
+  border-radius: 1.5rem;
+  // prevents the search result element lost the border-radius property
+  overflow: hidden;
+}
+
+// global border-radius for other div elements in the article area.
+pre,
+details,
+.callout,
+.graph-outer,
+figure[data-rehype-pretty-code-figure] > pre {
+  border-radius: 0.75rem;
+}
+
+// ----------
+// LOGO
+// Replace site title with logo (svg format)
 .page-title a {
-  // dimension of your logo
   display: inline-block;
   width: 136px;
   height: 20px;
 
-  // absolute path in your obsidian vault
-  background-image: url('assets/logo.svg'); 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  // SVG as mask
+  // Absolute path inside your obsidian vault folder
+  mask-image: url("assets/logo.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: url("assets/logo.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
 
-  // hide the text 
+  // assign the logo color: light mode
+  background-color: var(--dark);
+
+  // hide the give site title
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
 
-// 화면 크기 800px 이하일 때 최상단 네비 바를 반투명 블러 스타일로 교체
+// assign the logo color: light mode
+body.theme-dark .page-title a {
+  background-color: color-mix(in srgb, var(--secondary) 50%, var(--gray));
+}
+
+// -------------------------------- //
+// Global Navigation Adjustment
+// -------------------------------- //
+// Turn the global nav as half-transparent
 @media (max-width: 800px) {
   .page > #quartz-body .sidebar.left:has(.explorer) {
     background-color: color-mix(in srgb, var(--light) 50%, transparent);
@@ -50,9 +146,9 @@ body {
   }
 }
 
-// ---
-// Explorer plugin mod
-// adjustment overview
+// -------------------------------- //
+// plugin: Explorer
+// -------------------------------- //
 // ---
 // change the misc. colors in explorer area
 // make explorer narrower,
@@ -70,7 +166,7 @@ body {
   }
 }
 
-// add extra room to the plugin area
+// add extra room to the bounding box
 // enable the padded background color
 .explorer-content li {
   padding-left: 0.5rem;
@@ -94,42 +190,58 @@ body {
 }
 
 // extra color adjustment for explorer plugin
-// page title
-.explorer-content ul li > a {
-  color: var(--neutral);
-}
-// folder title & folder color, 
+// folder title & folder color,
 .folder-container div > a,
 .folder-icon {
-  color: var(--tertiary);
+  color: var(--secondary);
 }
 
-// 그래프 확대한 캔버스의 배경의 블러값을 더 높인다. 기본은 5px이다.
-.graph > .global-graph-outer,
-.search > .search-container .active {
-  background-color: color-mix(in srgb, var(--lightgray) 50%, transparent);
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px);
+// page title
+.explorer-content ul li > a {
+  color: color-mix(in srgb, var(--darkgray) 75%, transparent);
 }
 
-// 그래프 클릭 시 전체 화면을 채우는 그래프의 속성을 조정한다.
-.graph > .global-graph-outer > .global-graph-container,
-.search > .search-container {
-  /* 1. 배경색을 기존 --light 변수 기반으로 가져가되, 뒤에 80(HEX로 50% 투명도)을 붙여 반투명화합니다. */
+// -------------------------------- //
+// SEARCH Field Settings
+// -------------------------------- //
+
+// change the background
+.search > .search-container.active {
+  background-color: color-mix(in srgb, var(--lightgray) 71%, transparent);
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px);
+}
+
+// The color of matched text in the query result page.
+.search-scroll-target,
+.highlight {
+  background: color-mix(in srgb, var(--success) 90%, transparent);
+}
+
+// -------------------------------- //
+// GRAPH VIEW Settings
+// -------------------------------- //
+// Increase the value of background blur. Initial value is 5px.
+.graph > .global-graph-outer {
+  background-color: color-mix(in srgb, var(--lightgray) 80%, transparent);
+  backdrop-filter: blur(6px) !important;
+  // code for Safari
+  -webkit-backdrop-filter: blur(6px);
+}
+
+// Blur adjustment for the modal background for graph view
+.graph > .global-graph-outer > .global-graph-container {
   background-color: color-mix(in srgb, var(--light) 50%, transparent);
-
-  /* 2. 뒷배경을 흐리게 처리하는 블러 효과를 적용합니다. (원하는 만큼 픽셀 조절 가능) */
   backdrop-filter: blur(50px) !important;
-  -webkit-backdrop-filter: blur(50px); /* 사파리 브라우저 호환성 대응 */
+  // code for Safari
+  -webkit-backdrop-filter: blur(50px);
   border-radius: 30px;
 }
 
-// 검색 메뉴 열렸을 때 해당 키워드의 배경색을 --success 로 바꿈.
-// .search > .search-container > .search-space > .search-layout .highlight {
-//   background: color-mix(in srgb, var(--success) 100%, #fff0);
-// }
-
-/// footer adjustment
+// -------------------------------- //
+// FOOTER Settings
+// -------------------------------- //
+// Hide the quartz copyright disclaimer and the related links.
 @media (max-width: 800px) {
   #quartz-body > footer {
     margin-top: 2rem;
@@ -139,7 +251,114 @@ body {
   display: none;
 }
 
+// -------------------------------- //
+// ARTICLE Settings
+// -------------------------------- //
 
-h1 {
-  color: var(--accent);
+// HEADING
+// -------------------------------- //
+// Adjust the respective margins for each level.
+article :is(h1) {
+  color: var(--info-content);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+article :is(h2) {
+  color: color-mix(in srgb, var(--info) 30%, var(--info-content));
+  padding-top: 0.85rem;
+  padding-bottom: 0.5rem;
+}
+
+article :is(h3) {
+  color: color-mix(in srgb, var(--success) 40%, var(--info-content));
+  padding-top: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+article :is(h4, h5, h6) {
+  color: color-mix(in srgb, var(--warning) 40%, var(--info-content));
+  padding-top: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+// HEADING - sticky headings : width < 800px
+// -------------------------------- //
+// implements sticky headings for the screen under 800px.
+@media (max-width: 800px) {
+  #quartz-body > div.left.sidebar {
+    z-index: 2 !important;
+  }
+
+  #quartz-body > div.right.sidebar {
+    z-index: auto !important;
+  }
+
+  div.global-graph-outer.active {
+    z-index: 9999 !important;
+    /* display: none; */
+  }
+
+  #quartz-body,
+  #quartz-body .center,
+  #quartz-body article {
+    overflow: visible !important;
+  }
+
+  article :is(h1, h2, h3, h4, h5, h6) {
+    background-color: color-mix(in srgb, var(--light) 40%, transparent);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    z-index: 1 !important;
+    max-width: 100%;
+    margin-inline: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* padding-right: 1em; */
+    top: 4rem;
+    position: sticky !important;
+  }
+}
+
+// HEADING - sticky headings  width > 800px
+// -------------------------------- //
+// implements sticky headings for the screen over 800px.
+@media (min-width: 800px) {
+  #quartz-body,
+  #quartz-body .center,
+  #quartz-body article {
+    overflow: visible !important;
+  }
+
+  article :is(h1, h2, h3, h4, h5, h6) {
+    background-color: color-mix(in srgb, var(--light) 100%, var(--light));
+    z-index: 1;
+    padding: 0.5rem 0;
+    top: 0;
+    position: sticky !important;
+  }
+}
+
+// WORKSTAT -
+// -------------------------------- //
+// color adjustment.
+
+.workstat {
+    /* [기본 설정] */
+    mix-blend-mode: multiply;
+    filter: grayscale(1); 
+
+    /* 🔥 안드로이드 크롬 대응: 하드웨어 가속(GPU) 강제 활성화 */
+    will-change: filter, mix-blend-mode; 
+    transform: translateZ(0); 
+}
+
+[saved-theme=dark] .workstat {
+    /* [다크모드 설정] */
+    mix-blend-mode: screen; 
+    filter: invert(1) grayscale(1); 
+
+    /* 🔥 안드로이드 크롬 대응: 다크모드 시 전환되는 그래픽 레이어 강제 재정렬 */
+    will-change: filter, mix-blend-mode;
+    transform: translateZ(0);
 }
