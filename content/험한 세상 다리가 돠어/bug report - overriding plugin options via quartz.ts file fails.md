@@ -1,13 +1,11 @@
 ---
-date-created: "[[Journal/2026-09-11|2026-09-11]]"
-date-updated: "[[Journal/2026-09-11|2026-09-11]]"
-aliases:
+publish: true
+created: 2026-09-11T03:54:31.676Z
+modified: 2026-09-14T07:59:34.810Z
 tags:
   - quartz
-ai-sourced:
-  - ai-proofed
-publish: true
 ---
+
 See [[index]]
 
 > [!NOTE] A draft for github issue comment.
@@ -15,13 +13,13 @@ See [[index]]
 
 I would like to share my case and the workaround I found, as my case regarding the quartz option overriding failure via `quartz.ts` brought me here too. In my case the plugin is `explorer` and the overridden option is `filterFn`.
 
-I understand that the @Julian-M 's initial issue occurred in `recent-notes` plugin while mine popped up from `explorer`. But as I met this issue while searching for a solution using the keywords, `quartz.ts option overriding`. So there might be someone with the same keywords may need the solution I spotted on discord. 
+I understand that the @Julian-M 's initial issue occurred in `recent-notes` plugin while mine popped up from `explorer`. But as I met this issue while searching for a solution using the keywords, `quartz.ts option overriding`. So there might be someone with the same keywords may need the solution I spotted on discord.
 
 And hopefully this would be a chance for the team to look into the official documentation and the code sample again to make them work under the circumstances we have faced.
 
 **Describe the bug**
 
-I tried the example code from the official document to filter the elements within explorer plugin but it failed. The code aims `explorer` to omit several folders in my obsidian vault based on its `displayName`. 
+I tried the example code from the official document to filter the elements within explorer plugin but it failed. The code aims `explorer` to omit several folders in my obsidian vault based on its `displayName`.
 
 **To Reproduce**
 
@@ -57,14 +55,14 @@ export default config
 export const layout = await loadQuartzLayout()
 ```
 
-3. build 
+3. build
 
 ```bash
 npx quartz build --serve
 ```
 
-4. confirmed no changes. 
-5. check again after I deleted quartz cache folder(quartz\.quartz-cache\), `quartz\public` folder  and browser cache. But the filter doesn't work.
+4. confirmed no changes.
+5. check again after I deleted quartz cache folder(quartz.quartz-cache), `quartz\public` folder  and browser cache. But the filter doesn't work.
 
 **Expected behavior**
 
@@ -98,7 +96,7 @@ componentRegistry.setOptionOverrides("@quartz-community/explorer", {
 } as Partial<ExplorerOptions>)
 ```
 
-As well as this 
+As well as this
 
 ```yaml
   - source: "@quartz-community/explorer"
@@ -184,4 +182,3 @@ const config = await loadQuartzConfig()
 export default config
 export const layout = await loadQuartzLayout()
 ```
-
