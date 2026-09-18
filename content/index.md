@@ -1,5 +1,6 @@
 ---
 publish: true
+permalink: /index.md
 title: studio.o-m.kr
 created: 2026-09-10T04:31:34.216Z
 modified: 2026-09-18T08:14:51.443Z

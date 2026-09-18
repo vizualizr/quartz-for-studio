@@ -1,5 +1,6 @@
 ---
 publish: true
+permalink: /deckerd/layout.md
 title: Layout
 created: 2026-09-12T09:44:28.777Z
 modified: 2026-09-10T03:46:00.832Z
