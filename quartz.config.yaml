@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: studio.o-m.kr
+  baseUrl: vizualizr.github.com/quartz-for-studio
   ignorePatterns:
     - backoffice
     - backoffice/**

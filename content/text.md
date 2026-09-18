@@ -1,3 +1,7 @@
+---
+publish: true
+---
+
 ![[assets/Pasted image 20260913122004.png]]
 
 I would like to share my case and the workaround I found, as my case regarding the quartz option overriding failure via `quartz.ts` brought me here too. In my case the plugin is `explorer` and the overridden option is `filterFn`.
