@@ -1,3 +1,10 @@
+---
+publish: true
+permalink: /험한 세상 다리가 돠어/arithmatic.md
+created: 2026-09-18T10:46:31.194Z
+modified: 2026-09-18T12:44:47.963Z
+---
+
 Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are [already using Quartz](https://quartz.jzhao.xyz/showcase) to publish personal notes, websites, and [digital gardens](https://jzhao.xyz/posts/networked-thought) to the web.
 
 ## 🪴 Get Started

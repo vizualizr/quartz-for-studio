@@ -1,3 +1,10 @@
+---
+publish: true
+permalink: /text.md
+created: 2026-09-18T10:46:31.191Z
+modified: 2026-09-18T12:45:03.005Z
+---
+
 ![[assets/Pasted image 20260913122004.png]]
 
 I would like to share my case and the workaround I found, as my case regarding the quartz option overriding failure via `quartz.ts` brought me here too. In my case the plugin is `explorer` and the overridden option is `filterFn`.
