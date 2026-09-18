@@ -1,51 +1,57 @@
 ---
+publish: true
 title: studio.o-m.kr
+created: 2026-09-10T04:31:34.216Z
+modified: 2026-09-18T08:14:51.443Z
 ---
+
 <img class="workstat" src="https://wakatime.com/share/@2c977ef5-79a6-45cc-94ed-1ba3005f66dd/b7daf152-86c8-487b-ae7d-f2e684b50c85.png" />
 
 A documentation of developing an independent data storytelling blog from scratch.
+
 ## updated
 
-```dataviewjs
-// 1. 설정 항목
-const LIMIT_COUNT = 5; // 화면에 표시할 최근 글 개수
-const PREVIEW_LENGTH = 200; // 보여줄 본문 글자수 제한
-const omittion = ["start"]; // 제외할 파일 이름 목록 (확장자 제외)
+### [[deckerd/쿼츠의 철학|쿼츠의 철학]]
 
-// 2. 최근 수정된 파일 가져오기 (현재 대시보드 파일 및 omittion 배열에 있는 파일 제외)
-const recentPages = dv.pages()
-    .where(p => 
-        p.file.path !== dv.current().file.path && // 현재 대시보드 파일 제외
-        !omittion.includes(p.file.name) // omittion 배열에 포함된 파일 이름 제외
-    )
-    .sort(p => p.file.mday, 'desc') // 수정일 기준 내림차순 정렬
-    .slice(0, LIMIT_COUNT);
+📅 **수정일:** 2026-09-17 00:00
 
-// 3. 각 파일의 내용을 읽어와 피드 스타일로 렌더링
-for (let page of recentPages) {
-    const content = await app.vault.readRaw(page.file.path);
-    
-    // 프론트매터(YAML 속성) 제거 처리
-    let cleanContent = content;
-    if (content.startsWith("---")) {
-        const endFrontmatter = content.indexOf("---", 3);
-        if (endFrontmatter !== -1) {
-            cleanContent = content.slice(endFrontmatter + 3).trim();
-        }
-    }
-    
-    // 본문 미리보기 텍스트 자르기 및 말줄임표 처리
-    const preview = cleanContent.length > PREVIEW_LENGTH 
-        ? cleanContent.slice(0, PREVIEW_LENGTH) + "..." 
-        : cleanContent;
+정원은 진정한 하이퍼텍스트여야 합니다\
+정원은 위상수학적 관점에서 본 웹(web)과 같습니다. 정원을 거닐 때마다 새로운 경로와 의미가 만들어지며, 정원에 무언가를 추가할 때는 미래에 예측하지 못한 수많은 관계가 형성될 수 있는 방식으로 배치하게 됩니다.
 
-    // HTML 구조로 로그 스타일 렌더링
-    dv.header(3, dv.fileLink(page.file.path)); // 제목 링크
-    dv.el("div", `📅 **수정일:** ${page.file.mday.toFormat("yyyy-MM-dd HH:mm")}`, { attr: { style: "font-size: 0.85em; color: gray; margin-bottom: 8px;" } }); // 날짜
-    dv.el("div", preview, { attr: { style: "white-space: pre-wrap; line-height: 1.6; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--background-modifier-border);" } }); // 본문
-}
-```
+### 정원과 흐름
 
+파일 캐비닛 방식의 문제는 생성력이나 창의성보다는 접근 효율성과 상호운용성에 초점...
 
+### [[Obsidian compatibility|Obsidian compatibility]]
 
+📅 **수정일:** 2026-09-16 00:00
 
+Quartz was originally designed as a tool to publish Obsidian vaults as websites. Even as the scope of Quartz has widened over time, it hasn't lost the ability to seamlessly interoperate with Obsidian....
+
+### [[deckerd/philosophy|philosophy]]
+
+📅 **수정일:** 2026-09-14 00:00
+
+![[app://11027c05823bf882ca4110b1cf737302d4f6/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/assets Screenshot 2026-09-07 141838.png?1789015127453|assets/assets Screenshot 2026-09-07 141838.png]]
+
+## A garden should be a true hypertext
+
+> The garden is the web as topology. Every walk through the garden creates new paths, new meanings, and when...
+
+### [[험한 세상 다리가 돠어/arithmatic|arithmatic]]
+
+📅 **수정일:** 2026-09-14 00:00
+
+Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are \[\[h...
+
+### \[bug report - overriding plugin options via quartz.ts file fails]\(험한 세상 다리가 돠어/bug report - overriding plugin options via quartz.ts file fails|already using Quartz]]
+
+📅 **수정일:** 2026-09-14 00:00
+
+See [[index|index]]
+
+A draft for github issue comment.
+
+I added this comment to [[https://github.com/jackyzha0/quartz/issues/2382<a href="tags/issuecomment" class="tag-link">issuecomment</a>-5277667457|the github issue]] too.
+
+I would like to s...

@@ -1,8 +1,12 @@
 ---
-title: "Obsidian Compatibility"
+publish: true
+title: Obsidian Compatibility
+created: 2026-09-14T03:31:09.163Z
+modified: 2026-09-16T09:04:44.040Z
 tags:
   - feature/transformer
 ---
+
 Quartz was originally designed as a tool to publish Obsidian vaults as websites. Even as the scope of Quartz has widened over time, it hasn't lost the ability to seamlessly interoperate with Obsidian.
 
 By default, Quartz ships with the [[ObsidianFlavoredMarkdown]] plugin, which is a transformer plugin that adds support for [Obsidian Flavored Markdown](https://help.obsidian.md/Editing+and+formatting/Obsidian+Flavored+Markdown). This includes support for features like [[wikilinks]] and [[Mermaid diagrams]].
@@ -54,7 +58,7 @@ Obsidian-style comments are stripped from the output:
 This is visible. %%This is a comment and won't appear.%%
 ```
 
-This renders as: This is visible. %%This is a comment and won't appear.%%
+This renders as: This is visible.&#x20;
 
 Multi-line comments are also supported:
 
@@ -236,6 +240,3 @@ The top level below the title is this one, heading level 2.
 ##### Heading 5
 
 ###### Heading 6
-
-
-

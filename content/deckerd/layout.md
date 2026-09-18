@@ -1,5 +1,8 @@
 ---
+publish: true
 title: Layout
+created: 2026-09-12T09:44:28.777Z
+modified: 2026-09-10T03:46:00.832Z
 ---
 
 Certain emitters may also output [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) files. To enable easy customization, these emitters allow you to fully rearrange the layout of the page.

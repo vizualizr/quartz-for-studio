@@ -1,7 +1,12 @@
 ---
+publish: true
 title: Philosophy of Quartz
+created: 2026-09-12T09:44:28.789Z
+modified: 2026-09-14T01:46:06.606Z
 ---
+
 ![[assets/assets Screenshot 2026-09-07 141838.png]]
+
 ## A garden should be a true hypertext
 
 > The garden is the web as topology. Every walk through the garden creates new paths, new meanings, and when we add things to the garden we add them in a way that allows many future, unpredicted relationships.
@@ -24,7 +29,7 @@ The goal of digital gardening should be to tap into your network’s collective 
 
 Quartz is designed first and foremost as a tool for publishing [digital gardens](https://jzhao.xyz/posts/networked-thought) to the web. To me, digital gardening is not just passive knowledge collection. It’s a form of expression and sharing.
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.”
+> “\[One] who works with the door open gets all kinds of interruptions, but \[they] also occasionally gets clues as to what the world is and what might be important.”
 > — Richard Hamming
 
 **The goal of Quartz is to make sharing your digital garden free and simple.**

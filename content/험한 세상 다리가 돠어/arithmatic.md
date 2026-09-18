@@ -5,7 +5,7 @@ Quartz is a fast, batteries-included static-site generator that transforms Markd
 Quartz requires **at least [Node](https://nodejs.org/) v22** and `npm` v10.9.2 to function correctly. Ensure you have these installed on your machine before continuing. See the [prerequisites](https://quartz.jzhao.xyz/getting-started/#prerequisites) for help installing them.
 
 > GitHub users
-> 
+>
 > You can also use the **[GitHub template](https://github.com/jackyzha0/quartz/generate)** to create your repository in one click, then clone that instead. See [Option A](https://quartz.jzhao.xyz/getting-started/installation#option-a-use-the-github-template-recommended) in the installation guide.
 
 ```sh
@@ -41,7 +41,7 @@ Already have a Quartz repository and cloning it on a new machine?
 `git clone https://github.com/<your-username>/<your-repo>.gitcd <your-repo>npm cinpx quartz plugin installnpx quartz build --serve`
 
 > Tip
-> 
+>
 > If you hit build errors on a fresh clone, try `npx quartz plugin install --latest` to refresh plugins to their latest versions. See [troubleshooting > Plugins fail to build on a fresh clone](https://quartz.jzhao.xyz/troubleshooting#plugins-fail-to-build-on-a-fresh-clone) for details.
 
 ## 🔧 Features
