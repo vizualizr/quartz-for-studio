@@ -1,5 +1,8 @@
 ---
 publish: true
+permalink: /text.md
+created: 2026-09-18T10:46:31.191Z
+modified: 2026-09-18T12:45:03.005Z
 ---
 
 ![[assets/Pasted image 20260913122004.png]]

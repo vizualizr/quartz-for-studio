@@ -1,5 +1,6 @@
 ---
 publish: true
+permalink: /험한 세상 다리가 돠어/bug report - overriding plugin options via quartz.ts file fails.md
 created: 2026-09-11T03:54:31.676Z
 modified: 2026-09-14T07:59:34.810Z
 tags:

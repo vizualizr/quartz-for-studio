@@ -1,5 +1,6 @@
 ---
 publish: true
+permalink: /Obsidian compatibility.md
 title: Obsidian Compatibility
 created: 2026-09-14T03:31:09.163Z
 modified: 2026-09-16T09:04:44.040Z

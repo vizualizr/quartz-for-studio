@@ -1,5 +1,6 @@
 ---
 publish: true
+permalink: /deckerd/philosophy.md
 title: Philosophy of Quartz
 created: 2026-09-12T09:44:28.789Z
 modified: 2026-09-14T01:46:06.606Z
