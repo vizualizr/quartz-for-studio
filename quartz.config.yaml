@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: studio.pages.dev
+  baseUrl: o-m-studio.pages.dev
   ignorePatterns:
     - backoffice
     - backoffice/**
