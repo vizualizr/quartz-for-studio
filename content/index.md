@@ -22,7 +22,7 @@ A documentation of developing an independent data storytelling blog from scratch
 
 2026-10-07
 
-![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/Pasted image 20261007183701.png?1791369421262|Pasted image 20261007183701.png]]
+!\[]\(app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/Pasted image 20261007183701.png?1791369421262)
 
 연결, 보호, 구축을 모⁠든 곳에서 지원 Cloudflare는 웹 사이트, 애플리케이션, AI 에이전트, 네트워크를 더 빠르고 안전하게 만듭니다. Cloudflare의 민첩한 SASE 플랫폼은 안전한 AI 도입을 가속화하며, 개발자 플랫폼은 AI 애플리케이션을 구축하고 실행하기에 가장 적합한 환경입니다. Cloudflare의 클라우드 연결성은 최고의 환경을…
 
@@ -30,7 +30,7 @@ A documentation of developing an independent data storytelling blog from scratch
 
 2026-09-18
 
-![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/assets Screenshot 2026-09-07 141838.png?1791363249281|assets Screenshot 2026-09-07 141838.png]]
+!\[]\(app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/assets Screenshot 2026-09-07 141838.png?1791363249281)
 
 이건 테스트입니다.
 
@@ -38,7 +38,7 @@ A documentation of developing an independent data storytelling blog from scratch
 
 2026-09-18
 
-![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/Pasted image 20260913122004.png?1791363249281|Pasted image 20260913122004.png]]
+!\[]\(app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/Pasted image 20260913122004.png?1791363249281)
 
 I would like to share my case and the workaround I found, as my case regarding the quartz option overriding failure via `quartz.ts` brought me here too. In my case the plugin is `explorer` and the ove…
 
