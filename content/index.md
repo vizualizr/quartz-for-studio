@@ -12,6 +12,17 @@ A documentation of developing an independent data storytelling blog from scratch
 
 ### updates
 
+### [[쿼츠의 철학|쿼츠의 철학]]
+
+2026-10-08
+
+정원은 진정한 하이퍼텍스트여야 합니다\
+정원은 위상수학적 관점에서 본 웹(web)과 같습니다. 정원을 거닐 때마다 새로운 경로와 의미가 만들어지며, 정원에 무언가를 추가할 때는 미래에 예측하지 못한 수많은 관계가 형성될 수 있는 방식으로 배치하게 됩니다.
+
+정원과 흐름
+
+파일 캐비닛 방식의 문제는 생성력이나 창의성보다는 접근 효율성과 상호운용성에 초점을 맞…
+
 ### [[클라우드플레어를 이용한 배포|클라우드플레어를 이용한 배포]]
 
 2026-10-07
@@ -41,15 +52,4 @@ I would like to share my case and the workaround I found, as my case regarding t
 
 2026-09-18
 
-Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are \[\[h…
-
-### \[쿼츠의 철학]\(deckerd/쿼츠의 철학|already using Quartz]]
-
-2026-09-18
-
-정원은 진정한 하이퍼텍스트여야 합니다\
-정원은 위상수학적 관점에서 본 웹(web)과 같습니다. 정원을 거닐 때마다 새로운 경로와 의미가 만들어지며, 정원에 무언가를 추가할 때는 미래에 예측하지 못한 수많은 관계가 형성될 수 있는 방식으로 배치하게 됩니다.
-
-정원과 흐름
-
-파일 캐비닛 방식의 문제는 생성력이나 창의성보다는 접근 효율성과 상호운용성에 초점을 맞춘…
+Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are \[already using Quartz]\(h…
