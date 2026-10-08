@@ -12,7 +12,7 @@ A documentation of developing an independent data storytelling blog from scratch
 
 ### updates
 
-#### [[클라우드플레어를 이용한 배포|클라우드플레어를 이용한 배포]]
+### [[클라우드플레어를 이용한 배포|클라우드플레어를 이용한 배포]]
 
 2026-10-07
 
@@ -21,7 +21,7 @@ A documentation of developing an independent data storytelling blog from scratch
 
 Cloudflare는 웹 사이트, 애플리케이션, AI 에이전트, 네트워크를 더 빠르고 안전하게 만듭니다. Cloudflare의 민첩한 SASE 플랫폼은 안전한 AI 도입을 가속화하며, 개발자 플랫폼은 AI 애플리케이션을 구축하고 실행하기…
 
-#### [[Journal/2026-09-10|2026-09-10]]
+### [[Journal/2026-09-10|2026-09-10]]
 
 2026-09-18
 
@@ -29,7 +29,7 @@ Cloudflare는 웹 사이트, 애플리케이션, AI 에이전트, 네트워크�
 
 이건 테스트입니다.
 
-#### [[text|text]]
+### [[text|text]]
 
 2026-09-18
 
@@ -37,13 +37,13 @@ Cloudflare는 웹 사이트, 애플리케이션, AI 에이전트, 네트워크�
 
 I would like to share my case and the workaround I found, as my case regarding the quartz option overriding failure via `quartz.ts` brought me here too. In…
 
-#### [[험한 세상 다리가 돠어/arithmatic|arithmatic]]
+### [[험한 세상 다리가 돠어/arithmatic|arithmatic]]
 
 2026-09-18
 
 Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are \[\[h…
 
-#### \[쿼츠의 철학]\(deckerd/쿼츠의 철학|already using Quartz]]
+### \[쿼츠의 철학]\(deckerd/쿼츠의 철학|already using Quartz]]
 
 2026-09-18
 
