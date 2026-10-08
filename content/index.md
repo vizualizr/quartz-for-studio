@@ -14,7 +14,7 @@ A documentation of developing an independent data storytelling blog from scratch
 
 #### [[클라우드플레어를 이용한 배포|클라우드플레어를 이용한 배포]]
 
-**수정일:** 2026-10-08 00:00
+2026-10-08
 
 ![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/Pasted image 20261007183701.png?1791369421262|assets/Pasted image 20261007183701.png]]
 
@@ -24,7 +24,7 @@ Cloudflare는 웹 사이트, 애플리케이션, AI 에이전트, 네트워크�
 
 #### [[Journal/2026-09-10|2026-09-10]]
 
-**수정일:** 2026-10-07 00:00
+2026-10-07
 
 ![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/assets Screenshot 2026-09-07 141838.png?1791363249281|assets/assets Screenshot 2026-09-07 141838.png]]
 
@@ -32,21 +32,60 @@ Cloudflare는 웹 사이트, 애플리케이션, AI 에이전트, 네트워크�
 
 #### [[Obsidian compatibility|Obsidian compatibility]]
 
-**수정일:** 2026-10-07 00:00
+2026-10-07
 
 Quartz was originally designed as a tool to publish Obsidian vaults as websites. Even as the scope of Quartz has widened over time, it hasn't lost the ability to seamlessly interoperate with Obsidian.…
 
 #### [[assets/index|index]]
 
-**수정일:** 2026-10-07 00:00
+2026-10-07
 
 Hello,\
 This is an index page!
 
 #### [[deckerd/layout|layout]]
 
-**수정일:** 2026-10-07 00:00
+2026-10-07
 
 Certain emitters may also output [[https://developer.mozilla.org/en-US/docs/Web/HTML|HTML]] files. To enable easy customization, these emitters allow you to fully rearrange the layout of the page.
 
 In …
+
+#### [[Journal/2026-09-10|2026-09-10]]
+
+2026-10-07
+
+![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/assets Screenshot 2026-09-07 141838.png?1791363249281|assets/assets Screenshot 2026-09-07 141838.png]]
+
+이건 테스트입니다.
+
+#### [[Obsidian compatibility|Obsidian compatibility]]
+
+2026-10-07
+
+Quartz was originally designed as a tool to publish Obsidian vaults as websites. Even as the scope of Quartz has widened over time, it hasn't lost the ability to seamlessly interoperate with Obsidian.…
+
+#### [[assets/index|index]]
+
+2026-10-07
+
+Hello,\
+This is an index page!
+
+#### [[deckerd/layout|layout]]
+
+2026-10-07
+
+Certain emitters may also output [[https://developer.mozilla.org/en-US/docs/Web/HTML|HTML]] files. To enable easy customization, these emitters allow you to fully rearrange the layout of the page.
+
+In …
+
+#### [[deckerd/philosophy|philosophy]]
+
+2026-10-07
+
+![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/assets Screenshot 2026-09-07 141838.png?1791363249281|assets/assets Screenshot 2026-09-07 141838.png]]
+
+## A garden should be a true hypertext
+
+> The garden is the web as topology. Every walk through the garden creates new paths, new meanings, and whe…
