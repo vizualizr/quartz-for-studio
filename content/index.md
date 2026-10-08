@@ -12,26 +12,6 @@ A documentation of developing an independent data storytelling blog from scratch
 
 ### updates
 
-#### [[assets/logo|logo]]
-
-2026-10-08
-
-A reference to the logo file.\
-![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/logo.svg?1791363249289|assets/logo.svg]]
-
-#### [[backoffice/backoffice test|backoffice test]]
-
-2026-10-07
-
-[[Journal/2026-08-19|Journal/2026-08-19]]
-
-- citations에서 지정한 경로의 루트 path가 vault의 기본 폴더가 아니라 quartz의 기본 설치 폴더를 기준으로 동작하는 거 같다.
-- 폴더 이름에 `.` 이 들어갈 경우 아래처럼 설정한 뒤 해당 폴더를 클릭하면 404 페이지로 이동한다.
-
-```
-source: "@quartz-community/…
-```
-
 #### [[클라우드플레어를 이용한 배포|클라우드플레어를 이용한 배포]]
 
 2026-10-07
@@ -56,3 +36,20 @@ Cloudflare는 웹 사이트, 애플리케이션, AI 에이전트, 네트워크�
 ![[app://0d16fee2d281ed9866880851deb7515ba011/D:/yonggeun/now/makr/projects/o-m.kr/studio/quartz-for-studio/content/assets/Pasted image 20260913122004.png?1791363249281|assets/Pasted image 20260913122004.png]]
 
 I would like to share my case and the workaround I found, as my case regarding the quartz option overriding failure via `quartz.ts` brought me here too. In…
+
+#### [[험한 세상 다리가 돠어/arithmatic|arithmatic]]
+
+2026-09-18
+
+Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are \[\[h…
+
+#### \[쿼츠의 철학]\(deckerd/쿼츠의 철학|already using Quartz]]
+
+2026-09-18
+
+정원은 진정한 하이퍼텍스트여야 합니다\
+정원은 위상수학적 관점에서 본 웹(web)과 같습니다. 정원을 거닐 때마다 새로운 경로와 의미가 만들어지며, 정원에 무언가를 추가할 때는 미래에 예측하지 못한 수많은 관계가 형성될 수 있는 방식으로 배치하게 됩니다.
+
+정원과 흐름
+
+파일 캐비닛 방식의 문제는 생성력이나 창의성보다는 접근 효율성과 상호운용성에 초점을 맞춘…
