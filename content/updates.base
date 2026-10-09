@@ -1,0 +1,26 @@
+filters:
+  and:
+    - file.ext == "md"
+    - '!file.path.contains("assets")'
+    - '!file.path.contains("backoffice")'
+    - '!file.name.contains("index")'
+    - '!file.name.contains("canvas")'
+views:
+  - type: cards
+    name: cards
+    order:
+      - modified
+    sort:
+      - property: created
+        direction: DESC
+    cardSize: 300
+    image: note.cover
+    imageAspectRatio: 1.6
+  - type: table
+    name: table
+    sort:
+      - property: created
+        direction: DESC
+    cardSize: 400
+    image: note.cover
+    imageAspectRatio: 0.5

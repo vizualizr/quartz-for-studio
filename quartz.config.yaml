@@ -263,7 +263,8 @@ plugins:
       limit: 5
   - source: "@quartz-community/spacer"
     enabled: true
-    options: {}
+    options: {
+    }
     order: 25
     layout:
       position: left

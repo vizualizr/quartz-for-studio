@@ -1,5 +1,5 @@
 ---
-cover: assets/max richter now we can sing.png
+cover: "[[assets/max richter now we can sing.png]]"
 ---
 
 ![[assets/max richter now we can sing.png]]
