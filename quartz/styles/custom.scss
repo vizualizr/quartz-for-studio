@@ -362,3 +362,42 @@ article :is(h4, h5, h6) {
     will-change: filter, mix-blend-mode;
     transform: translateZ(0);
 }
+
+
+// bases car mod
+
+.bases-card {
+    box-shadow: none;
+}
+.bases-card-image {
+    background: none;
+}
+
+a.internal {
+    padding: 0rem 0rem;
+    border-radius: 1rem;
+    
+}
+a.internal img {
+    border-radius: 0.8rem 0.8rem 0 0;
+    margin: 0rem;
+}
+
+
+.bases-card-image {
+    mix-blend-mode: multiply;
+    filter: grayscale(50%);
+    will-change: filter, mix-blend-mode;
+    transform: translateZ(0)
+}
+
+[saved-theme=dark] .bases-card-image {
+    mix-blend-mode:screen;
+    filter: grayscale(50%) brightness(80%);
+    will-change: filter, mix-blend-mode;
+    transform: translateZ(0)
+}
+
+span.bases-card-label {
+    display:none;
+}

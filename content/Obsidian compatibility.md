@@ -6,7 +6,9 @@ created: 2026-09-14T03:31:09.163Z
 modified: 2026-09-16T09:04:44.040Z
 tags:
   - feature/transformer
+cover: assets/obsidian.png
 ---
+![[assets/obsidian.png]]
 
 Quartz was originally designed as a tool to publish Obsidian vaults as websites. Even as the scope of Quartz has widened over time, it hasn't lost the ability to seamlessly interoperate with Obsidian.
 

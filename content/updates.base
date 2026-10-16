@@ -1,21 +1,29 @@
 filters:
   and:
     - file.ext == "md"
-    - '!file.path.contains("assets")'
-    - '!file.path.contains("backoffice")'
     - '!file.name.contains("index")'
     - '!file.name.contains("canvas")'
+    - '!file.inFolder("assets")'
+    - '!file.inFolder("backoffice")'
+    - '!file.hasLink("Not Found")'
+formulas:
+  Untitled: file.mtime.format("YYYY-MM-DD HH:mm")
+properties:
+  formula.Untitled:
+    displayName: published on
 views:
   - type: cards
     name: cards
     order:
-      - modified
+      - formula.Untitled
+      - excerpt
     sort:
-      - property: created
-        direction: DESC
+      - property: file.mtime
+        direction: ASC
+    limit: 12
     cardSize: 300
     image: note.cover
-    imageAspectRatio: 1.6
+    imageAspectRatio: 2.2
   - type: table
     name: table
     sort:
@@ -24,3 +32,10 @@ views:
     cardSize: 400
     image: note.cover
     imageAspectRatio: 0.5
+  - type: list
+    name: list
+    order:
+      - file.name
+      - modified
+    markers: none
+    indentProperties: true
