@@ -12,6 +12,10 @@
     "url": "https://github.com/jackyzha0/quartz.git"
   },
   "scripts": {
+    "//dev": "로컬 테스트: npm run dev",
+    "dev": "npx quartz build --serve --directory ../vault-test",
+    "//build:prod": "프로덕션 빌드 생성: npm run build:prod",
+    "build:prod": "npx quartz build --directory ../vault-production",
     "quartz": "./quartz/bootstrap-cli.mjs",
     "docs": "npx quartz build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",
