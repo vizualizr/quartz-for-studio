@@ -1,0 +1,8 @@
+[submodule "content-test"]
+	path = content-test
+	url = https://github.com/vizualizr/studio-vault-test.git
+	branch = main
+[submodule "content-production"]
+	path = content-production
+	url = https://github.com/vizualizr/studio-vault-production.git
+	branch = main
